@@ -18,6 +18,8 @@ jobs:
       - uses: hacs/action@main
         with:
           category: plugin
+          # la licenza è un testo d'uso personale, non una licenza SPDX: HACS la segnala ma non la richiede per i repository personalizzati
+          ignore: license
 
   syntax:
     name: JavaScript
