@@ -1,0 +1,20 @@
+# Aurora Casa 3D dalla mappa Aurora Casa Viva che hai gia' in una plancia.
+# Incolla questo in una scheda Manuale: la scheda trova da sola la tua mappa e la rifa' in 3D.
+type: custom:aurora-casa-3d
+casa_viva: auto
+
+# Facoltativo: dove cercare, se hai piu' mappe o plance
+# casa_viva:
+#   dashboard: casa     # il nome nell'indirizzo della plancia (/casa); "lovelace" e' la principale
+#   view: Mappa         # titolo o percorso della vista
+#   index: 0            # quale scheda, se nella vista ce n'e' piu' di una
+
+# Facoltativo: quello che scrivi qui vince su quello importato
+# wall_height: 2.9
+# camera: { yaw: -35, pitch: 55, zoom: 1.1 }
+# tap_action: toggle      # il tocco su una stanza accende o spegne la luce
+# auto_rotate: true      # la casa gira da sola (di serie sta ferma dove la lasci)
+# furniture:              # i mobili: di solito basta il pulsante Arreda sotto la casa
+#   - { type: sofa, at: [312, 268], size: [2.2, 0.95], rotate: 90 }
+# rooms:
+#   soggiorno: { name: Salotto }

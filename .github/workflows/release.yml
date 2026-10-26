@@ -1,0 +1,25 @@
+name: Release
+
+# Quando crei un tag (per esempio v1.1.0) pubblica la versione con il file della scheda:
+# HACS mostra il numero di versione e propone gli aggiornamenti.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Il tag coincide con la versione del file
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          grep -q "const AC3_VERSION = '$v'" dist/aurora-casa-3d.js || { echo "Il tag $GITHUB_REF_NAME non coincide con AC3_VERSION nel file"; exit 1; }
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/aurora-casa-3d.js
+          generate_release_notes: true
